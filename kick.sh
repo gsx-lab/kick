@@ -55,6 +55,8 @@ echo " ------------ init ------------"
 gitClone "git clone https://github.com/gsx-lab/init.git"
 pushd init
 #chmod -v u+x init.sh
-./init.sh
+#./init.sh
+# bash init.sh
+source init.sh
 popd
 echo " ------------ END ------------"
