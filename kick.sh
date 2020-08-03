@@ -51,24 +51,6 @@ security delete-internet-password -l github.com
 security find-internet-password -s github.com
 echo " ------------ END ------------"
 
-
-echo " ------------ nmap ------------"
-#* nmap
-# * nmap v7.70をインストールする
-# * brewのnmap(v7.80)にはnmap-scriptにバグがあるため(Refs #12692)
-brew info nmap
-nmap -v
-pushd /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula
-git checkout 7032494f15 nmap.rb
-# brewで更新されないように設定してインストール
-HOMEBREW_NO_AUTO_UPDATE=1 brew install nmap
-brew info nmap
-nmap -v
-# Formulaのバージョンはもとに戻しておく
-git reset --hard
-popd
-echo " ------------ END ------------"
-
 echo " ------------ init ------------"
 gitClone "git clone https://github.com/gsx-lab/init.git"
 pushd init
